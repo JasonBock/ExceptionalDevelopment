@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Exceptions.Tests.Unit
+namespace Exceptions.Tests
 {
 	[TestClass]
 	public sealed class InvalidNameExceptionTests
@@ -15,9 +15,8 @@ namespace Exceptions.Tests.Unit
 
 		public InvalidNameExceptionTests()
 			: base(InvalidNameExceptionTests.Message)
-		{
-		}
-
+		{ }
+ 
 		[TestMethod]
 		public void CreateException()
 		{

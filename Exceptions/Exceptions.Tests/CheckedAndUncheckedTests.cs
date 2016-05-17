@@ -1,17 +1,18 @@
-﻿using Exceptions;
+﻿using Exceptions.Utilities;
 using Exceptions.Utilities.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Exceptions.Tests.Unit
+namespace Exceptions.Tests
 {
 	[TestClass]
 	public sealed class CheckedAndUncheckedTests : CoreTests
 	{
-		[TestMethod, ExpectedException(typeof(OverflowException))]
+		[TestMethod]
 		public void RunChecked()
 		{
-			CheckedAndUnchecked.CheckedAdd(int.MaxValue, int.MaxValue);
+			ExceptionAssert.Throws<OverflowException>(
+				() => CheckedAndUnchecked.CheckedAdd(int.MaxValue, int.MaxValue));
 		}
 
 		[TestMethod]

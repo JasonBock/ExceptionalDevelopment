@@ -1,9 +1,9 @@
-﻿using Exceptions.Filters;
+﻿using Exceptions.Utilities;
 using Exceptions.Utilities.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Exceptions.Tests.Unit
+namespace Exceptions.Tests
 {
 	[TestClass]
 	public sealed class FilterEmitterTests : CoreTests
@@ -11,14 +11,15 @@ namespace Exceptions.Tests.Unit
 		[TestMethod]
 		public void DivideWithNoException()
 		{
-			Assert.AreEqual(0, 
+			Assert.AreEqual(0,
 				new FilterEmitter().Divide(4, 0));
 		}
 
-		[TestMethod, ExpectedException(typeof(DivideByZeroException))]
+		[TestMethod]
 		public void DivideWithException()
 		{
-			new FilterEmitter().Divide(3, 0);
+			ExceptionAssert.Throws<DivideByZeroException>(
+				() => new FilterEmitter().Divide(3, 0));
 		}
 	}
 }

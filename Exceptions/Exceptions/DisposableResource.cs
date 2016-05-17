@@ -2,14 +2,11 @@
 
 namespace Exceptions
 {
-	public sealed class DisposableResource : IDisposable
+	public sealed class DisposableResource 
+		: IDisposable
 	{
-		public void Use()
-		{
-		}
-		
-		public void Dispose()
-		{
-		}
+		public void Use() { }
+
+		public void Dispose() { }
 	}
 }

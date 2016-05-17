@@ -6,8 +6,7 @@ namespace Exceptions
 	{
 		private Name()
 			: base()
-		{
-		}
+		{ }
 
 		public Name(string firstName, string lastName)
 			: base()
@@ -15,13 +14,13 @@ namespace Exceptions
 			if(string.IsNullOrEmpty(firstName))
 			{
 				throw new ArgumentException("A first name was not provided.", 
-					"firstName");
+					nameof(firstName));
 			}
 
 			if(string.IsNullOrEmpty(lastName))
 			{
 				throw new ArgumentException("A last name was not provided.", 
-					"lastName");
+					nameof(lastName));
 			}
 			
 			if(firstName == "Jason" && lastName == "Bock")
@@ -34,16 +33,8 @@ namespace Exceptions
 			this.LastName = lastName;
 		}
 		
-		public string FirstName
-		{
-			get;
-			private set;
-		}
+		public string FirstName { get; }
 
-		public string LastName
-		{
-			get;
-			private set;
-		}
+		public string LastName { get; }
 	}
 }

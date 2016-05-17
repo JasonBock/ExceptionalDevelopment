@@ -1,5 +1,4 @@
-﻿
-namespace Exceptions
+﻿namespace Exceptions
 {
 	public static class Uses
 	{

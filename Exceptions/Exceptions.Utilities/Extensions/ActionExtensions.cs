@@ -7,7 +7,12 @@ namespace Exceptions.Utilities.Extensions
 	{
 		public static TimeSpan Time(this Action @this)
 		{
-			Stopwatch watch = Stopwatch.StartNew();
+			if(@this == null)
+			{
+				throw new ArgumentNullException(nameof(@this));
+			}
+
+			var watch = Stopwatch.StartNew();
 			@this();
 			watch.Stop();
 			return watch.Elapsed;

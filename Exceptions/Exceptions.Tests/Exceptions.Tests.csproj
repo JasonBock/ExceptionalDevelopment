@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,13 +10,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Exceptions.Tests</RootNamespace>
     <AssemblyName>Exceptions.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,7 @@
     <CodeAnalysisRules>
     </CodeAnalysisRules>
     <CodeAnalysisRuleSet>Migrated rules for Exceptions.Tests.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,6 +46,7 @@
     <CodeAnalysisRules>
     </CodeAnalysisRules>
     <CodeAnalysisRuleSet>Migrated rules for Exceptions.Tests.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -53,23 +56,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Performance\CheckedAndUncheckedTests.cs" />
-    <Compile Include="Performance\ParseTests.cs" />
-    <Compile Include="Unit\CheckedAndUncheckedTests.cs" />
-    <Compile Include="Unit\ExceptionFromFinallyTests.cs" />
-    <Compile Include="Unit\InvalidNameExceptionTests.cs" />
-    <Compile Include="Unit\ExceptionTests.cs" />
-    <Compile Include="Unit\FilterEmitterTests.cs" />
+    <Compile Include="CheckedAndUncheckedTests.cs" />
+    <Compile Include="ExceptionFromFinallyTests.cs" />
+    <Compile Include="InvalidNameExceptionTests.cs" />
+    <Compile Include="ExceptionTests.cs" />
+    <Compile Include="FilterEmitterTests.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\NameTests.cs" />
-    <Compile Include="Unit\PersonTests.cs" />
+    <Compile Include="NameTests.cs" />
+    <Compile Include="PersonTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exceptions.Filters\Exceptions.Filters.vbproj">
-      <Project>{B91681FC-B0FB-4A0D-B3DD-6E15B1D40A03}</Project>
-      <Name>Exceptions.Filters</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{2DBBA702-929E-4F29-BBA2-5BC10F357827}</Project>
       <Name>Exceptions</Name>

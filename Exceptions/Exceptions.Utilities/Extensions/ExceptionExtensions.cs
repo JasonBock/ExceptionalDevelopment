@@ -15,13 +15,23 @@ namespace Exceptions.Utilities.Extensions
 
 		public static void Print(this Exception @this, TextWriter writer)
 		{
-			writer.WriteLine("Type Name: {0}", @this.GetType().FullName);
+			if(@this == null)
+			{
+				throw new ArgumentNullException(nameof(@this));
+			}
 
-			writer.WriteLine("\tSource: {0}", @this.Source);
-			writer.WriteLine("\tTargetSite: {0}", @this.TargetSite);
-			writer.WriteLine("\tMessage: {0}", @this.Message);
-			writer.WriteLine("\tStackTrace: {0}", @this.StackTrace);
-			writer.WriteLine("\tHelpLink: {0}", @this.HelpLink);
+			if(writer == null)
+			{
+				throw new ArgumentNullException(nameof(writer));
+			}
+
+			writer.WriteLine($"Type Name: {@this.GetType().FullName}");
+
+			writer.WriteLine($"\tSource: {@this.Source}");
+			writer.WriteLine($"\tTargetSite: {@this.TargetSite}");
+			writer.WriteLine($"\tMessage: {@this.Message}");
+			writer.WriteLine($"\tStackTrace: {@this.StackTrace}");
+			writer.WriteLine($"\tHelpLink: {@this.HelpLink}");
 
 			@this.PrintStackTrace(writer);
 			@this.PrintData(writer);
@@ -43,8 +53,7 @@ namespace Exceptions.Utilities.Extensions
 			{
 				if(exceptionType.GetProperty(property.Name) == null)
 				{
-					writer.WriteLine("\t\tName: {0}, Value: {1}",
-						property.Name, property.GetValue(@this, null));
+					writer.WriteLine($"\t\tName: {property.Name}, Value: {property.GetValue(@this, null)}");
 				}
 			}		
 		}
@@ -56,8 +65,7 @@ namespace Exceptions.Utilities.Extensions
 
 			foreach(DictionaryEntry dataPair in @this.Data)
 			{
-				writer.WriteLine("\t\tKey: {0}, Value: {1}",
-					dataPair.Key.ToString(), dataPair.Value.ToString());
+				writer.WriteLine($"\t\tKey: {dataPair.Key.ToString()}, Value: {dataPair.Value.ToString()}");
 			}
 		}
 
@@ -70,14 +78,14 @@ namespace Exceptions.Utilities.Extensions
 
 			for(var i = 0; i < trace.FrameCount; i++)
 			{
-				writer.WriteLine("\t\tFrame: {0}", i);
+				writer.WriteLine($"\t\tFrame: {i}");
 				var frame = trace.GetFrame(i);
-				writer.WriteLine("\t\t\tMethod: {0}", frame.GetMethod());
-				writer.WriteLine("\t\t\tFile: {0}", frame.GetFileName());
-				writer.WriteLine("\t\t\tColumn: {0}", frame.GetFileColumnNumber());
-				writer.WriteLine("\t\t\tLine: {0}", frame.GetFileLineNumber());
-				writer.WriteLine("\t\t\tIL Offset: {0}", frame.GetILOffset());
-				writer.WriteLine("\t\t\tNative Offset: {0}", frame.GetNativeOffset());
+				writer.WriteLine($"\t\t\tMethod: {frame.GetMethod()}");
+				writer.WriteLine($"\t\t\tFile: {frame.GetFileName()}");
+				writer.WriteLine($"\t\t\tColumn: {frame.GetFileColumnNumber()}");
+				writer.WriteLine($"\t\t\tLine: {frame.GetFileLineNumber()}");
+				writer.WriteLine($"\t\t\tIL Offset: {frame.GetILOffset()}");
+				writer.WriteLine($"\t\t\tNative Offset: {frame.GetNativeOffset()}");
 			}
 		}
 	}

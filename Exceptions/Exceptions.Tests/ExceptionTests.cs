@@ -1,10 +1,9 @@
-﻿using Exceptions;
-using Exceptions.Utilities.Extensions;
+﻿using Exceptions.Utilities.Extensions;
 using Exceptions.Utilities.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Exceptions.Tests.Unit
+namespace Exceptions.Tests
 {
 	[TestClass]
 	public sealed class ExceptionTests : CoreTests

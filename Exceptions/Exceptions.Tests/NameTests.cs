@@ -1,9 +1,10 @@
 ﻿using Exceptions;
+using Exceptions.Utilities;
 using Exceptions.Utilities.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Exceptions.Tests.Unit
+namespace Exceptions.Tests
 {
 	[TestClass]
 	public sealed class NameTests : CoreTests
@@ -16,34 +17,39 @@ namespace Exceptions.Tests.Unit
 			Assert.AreEqual("Smith", name.LastName);
 		}
 
-		[TestMethod, ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
 		public void CreateWithEmptyFirstName()
 		{
-			new Name(string.Empty, "Smith");
+			ExceptionAssert.Throws<ArgumentException>(
+				() => new Name(string.Empty, "Smith"));
 		}
 
-		[TestMethod, ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
 		public void CreateWithEmptyLastName()
 		{
-			new Name("Joe", string.Empty);
+			ExceptionAssert.Throws<ArgumentException>(
+				() => new Name("Joe", string.Empty));
 		}
 
-		[TestMethod, ExpectedException(typeof(InvalidNameException))]
+		[TestMethod]
 		public void CreateWithInvalidName()
 		{
-			new Name("Jason", "Bock");
+			ExceptionAssert.Throws<InvalidNameException>(
+				() => new Name("Jason", "Bock"));
 		}
 
-		[TestMethod, ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
 		public void CreateWithNullFirstName()
 		{
-			new Name(null, "Smith");
+			ExceptionAssert.Throws<ArgumentException>(
+				() => new Name(null, "Smith"));
 		}
 
-		[TestMethod, ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
 		public void CreateWithNullLastName()
 		{
-			new Name("Joe", null);
+			ExceptionAssert.Throws<ArgumentException>(
+				() => new Name("Joe", null));
 		}
 	}
 }
