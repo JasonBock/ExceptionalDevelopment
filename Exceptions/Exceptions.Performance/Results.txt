@@ -1,0 +1,19 @@
+﻿Parse Vs. TryParse
+
+|   Method |         Mean |      Error |     StdDev |
+|--------- |-------------:|-----------:|-----------:|
+|    Parse | 30,837.80 ns | 468.648 ns | 438.374 ns |
+| TryParse |     78.11 ns |   1.353 ns |   1.199 ns |
+
+
+Checked Vs. Unchecked
+
+|    Method |      Mean |     Error |    StdDev |    Median |
+|---------- |----------:|----------:|----------:|----------:|
+|   Checked | 0.0616 ns | 0.0373 ns | 0.0472 ns | 0.0452 ns |
+| Unchecked | 0.0208 ns | 0.0150 ns | 0.0140 ns | 0.0162 ns |
+
+// * Warnings *
+ZeroMeasurement
+  CheckedVsUnchecked.Checked: Default   -> The method duration is indistinguishable from the empty method duration
+  CheckedVsUnchecked.Unchecked: Default -> The method duration is indistinguishable from the empty method duration

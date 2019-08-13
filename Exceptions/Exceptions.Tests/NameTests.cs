@@ -1,55 +1,36 @@
-﻿using Exceptions;
-using Exceptions.Utilities;
-using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class NameTests : CoreTests
+	public static class NameTests
 	{
-		[TestMethod]
-		public void Create()
+		[Test]
+		public static void Create()
 		{
 			var name = new Name("Joe", "Smith");
-			Assert.AreEqual("Joe", name.FirstName);
-			Assert.AreEqual("Smith", name.LastName);
+			Assert.That(name.FirstName, Is.EqualTo("Joe"), nameof(name.FirstName));
+			Assert.That(name.LastName, Is.EqualTo("Smith"), nameof(name.LastName));
 		}
 
-		[TestMethod]
-		public void CreateWithEmptyFirstName()
-		{
-			ExceptionAssert.Throws<ArgumentException>(
-				() => new Name(string.Empty, "Smith"));
-		}
+		[Test]
+		public static void CreateWithEmptyFirstName() => 
+			Assert.That(() => new Name(string.Empty, "Smith"), Throws.TypeOf< ArgumentException>());
 
-		[TestMethod]
-		public void CreateWithEmptyLastName()
-		{
-			ExceptionAssert.Throws<ArgumentException>(
-				() => new Name("Joe", string.Empty));
-		}
+		[Test]
+		public static void CreateWithEmptyLastName() => 
+			Assert.That(() => new Name("Joe", string.Empty), Throws.TypeOf<ArgumentException>());
 
-		[TestMethod]
-		public void CreateWithInvalidName()
-		{
-			ExceptionAssert.Throws<InvalidNameException>(
-				() => new Name("Jason", "Bock"));
-		}
+		[Test]
+		public static void CreateWithInvalidName() => 
+			Assert.That(() => new Name("Jason", "Bock"), Throws.TypeOf<InvalidNameException>());
 
-		[TestMethod]
-		public void CreateWithNullFirstName()
-		{
-			ExceptionAssert.Throws<ArgumentException>(
-				() => new Name(null, "Smith"));
-		}
+		[Test]
+		public static void CreateWithNullFirstName() => 
+			Assert.That(() => new Name(null, "Smith"), Throws.TypeOf<ArgumentException>());
 
-		[TestMethod]
-		public void CreateWithNullLastName()
-		{
-			ExceptionAssert.Throws<ArgumentException>(
-				() => new Name("Joe", null));
-		}
+		[Test]
+		public static void CreateWithNullLastName() => 
+			Assert.That(() => new Name("Joe", null), Throws.TypeOf<ArgumentException>());
 	}
 }

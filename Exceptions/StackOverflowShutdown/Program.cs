@@ -4,19 +4,20 @@ namespace StackOverflowShutdown
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			Console.WriteLine("Invoked.");
 
 			try
 			{
 				Program.CallMe();
+				//Program.CallMeWithArgs(4, 3);
 			}
-			catch(StackOverflowException)
+			catch (StackOverflowException)
 			{
 				Console.WriteLine("Overflow!");
 			}
-			catch(Exception)
+			catch (Exception)
 			{
 				Console.WriteLine("BAD!");
 			}
@@ -24,13 +25,16 @@ namespace StackOverflowShutdown
 			{
 				Console.WriteLine("Finally");
 			}
-			
+
 			Console.WriteLine("Finished.");
 		}
 
-		static void CallMe()
-		{
-			Program.CallMe();
-		}
+		static void CallMe() => Program.CallThis();
+
+		static void CallThis() => Program.CallThat();
+
+		static void CallThat() => Program.CallThis();
+
+		static void CallMeWithArgs(int a, int b) => Program.CallMeWithArgs(b, a);
 	}
 }

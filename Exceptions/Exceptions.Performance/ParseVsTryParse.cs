@@ -8,20 +8,19 @@ namespace Exceptions.Performance
 		private const string BadValue = "7r83o4uf8ael";
 
 		[Benchmark]
-		public void Parse()
+		public int Parse()
 		{
 			try
 			{
-				int.Parse(ParseVsTryParse.BadValue);
+				return int.Parse(ParseVsTryParse.BadValue);
 			}
 			catch (FormatException) { }
+
+			return 0;
 		}
 
 		[Benchmark]
-		public void TryParse()
-		{
-			var result = 0;
-			int.TryParse(ParseVsTryParse.BadValue, out result);
-		}
+		public int TryParse() => 
+			int.TryParse(ParseVsTryParse.BadValue, out var result) ? result : 0;
 	}
 }

@@ -1,5 +1,4 @@
-﻿using Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FindingExceptions
@@ -8,7 +7,7 @@ namespace FindingExceptions
 	{
 		public void Execute(List<Person> persons)
 		{
-			int i = 0;
+			var i = 0;
 			
 			foreach(var person in persons)
 			{

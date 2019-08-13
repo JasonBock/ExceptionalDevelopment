@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D70FB212-3815-49F7-BDD6-56D323CA5B05}"
-	ProjectSection(SolutionItems) = preProject
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Utilities", "Exceptions.Utilities\Exceptions.Utilities.csproj", "{2ACFD5AA-330F-4446-A3B4-BD10ED6E8B6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{2DBBA702-929E-4F29-BBA2-5BC10F357827}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Tests", "Exceptions.Tests\Exceptions.Tests.csproj", "{C7247401-F554-4AE7-8D27-E963D9507429}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Faults", "Exceptions.Faults\Exceptions.Faults.csproj", "{9303779A-9E85-423F-9E4D-839AE0FE9C15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Client", "Exceptions.Client\Exceptions.Client.csproj", "{4282F90B-54D0-4FED-9475-7D80E8348C3A}"
 EndProject
@@ -52,10 +45,6 @@ Global
 		{C7247401-F554-4AE7-8D27-E963D9507429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7247401-F554-4AE7-8D27-E963D9507429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7247401-F554-4AE7-8D27-E963D9507429}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9303779A-9E85-423F-9E4D-839AE0FE9C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9303779A-9E85-423F-9E4D-839AE0FE9C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9303779A-9E85-423F-9E4D-839AE0FE9C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9303779A-9E85-423F-9E4D-839AE0FE9C15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4282F90B-54D0-4FED-9475-7D80E8348C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4282F90B-54D0-4FED-9475-7D80E8348C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4282F90B-54D0-4FED-9475-7D80E8348C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -95,6 +84,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2C10EC3-EC92-4F4A-AC7B-0C3968EE4E82}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Exceptions.vsmdi

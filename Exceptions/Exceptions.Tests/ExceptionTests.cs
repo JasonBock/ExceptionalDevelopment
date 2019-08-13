@@ -1,12 +1,10 @@
-﻿using Exceptions.Utilities.Extensions;
-using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class ExceptionTests : CoreTests
+	public static class ExceptionTests
 	{
 		private static ArgumentNullException Create(string name)
 		{
@@ -15,32 +13,26 @@ namespace Exceptions.Tests
 			return exception;
 		}
 
-		private static void Throw()
-		{
-			throw ExceptionTests.Create("args");
-		}
+		private static void Throw() => throw ExceptionTests.Create("args");
 
-		[TestMethod]
-		public void CreateAndPrint()
-		{
-			ExceptionTests.Create("args").Print();
-		}
+		[Test]
+		public static void CreateAndPrint() => ExceptionTests.Create("args").Print();
 
-		[TestMethod]
-		public void CreateThrowAndPrint()
+		[Test]
+		public static void CreateThrowAndPrint()
 		{
 			try
 			{
 				ExceptionTests.Throw();
 			}
-			catch(ArgumentNullException e)
+			catch (ArgumentNullException e)
 			{
 				e.Print();
 			}
 		}
 
-		[TestMethod]
-		public void CreateThrowAndPrintWithInner()
+		[Test]
+		public static void CreateThrowAndPrintWithInner()
 		{
 			try
 			{
@@ -48,42 +40,57 @@ namespace Exceptions.Tests
 				{
 					ExceptionTests.Throw();
 				}
-				catch(ArgumentNullException e)
+				catch (ArgumentNullException e)
 				{
 					throw new InvalidNameException("Custom", e);
 				}
 			}
-			catch(InvalidNameException e)
+			catch (InvalidNameException e)
 			{
 				e.Print();
 			}
 		}
 
-		[TestMethod]
-		public void PrintRethrown()
+		[Test]
+		public static void PrintRethrown()
 		{
 			try
 			{
 				ExceptionTests.RethrowException();
 			}
-			catch(ArgumentNullException e)
+			catch (ArgumentNullException e)
 			{
 				e.Print();
 			}
 		}
 
-		[TestMethod]
-		public void PrintRethrownWithReference()
+		[Test]
+		public static void PrintRethrownWithReference()
 		{
 			try
 			{
 				ExceptionTests.RethrowExceptionWithReference();
 			}
-			catch(ArgumentNullException e)
+			catch (ArgumentNullException e)
 			{
 				e.Print();
 			}
 		}
+
+		[Test]
+		public static async Task ThrowAndAwait()
+		{
+			try
+			{
+				ExceptionTests.RethrowExceptionWithReference();
+			}
+			catch (ArgumentNullException)
+			{
+				await ExceptionTests.RunAsync();
+			}
+		}
+
+		private static Task RunAsync() => Task.CompletedTask;
 
 		private static void RethrowException()
 		{
@@ -91,7 +98,7 @@ namespace Exceptions.Tests
 			{
 				ExceptionTests.Throw();
 			}
-			catch(ArgumentNullException)
+			catch (ArgumentNullException)
 			{
 				throw;
 			}
@@ -103,7 +110,7 @@ namespace Exceptions.Tests
 			{
 				ExceptionTests.Throw();
 			}
-			catch(ArgumentNullException e)
+			catch (ArgumentNullException e)
 			{
 				throw e;
 			}

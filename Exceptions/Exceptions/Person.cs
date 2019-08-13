@@ -11,18 +11,14 @@ namespace Exceptions
 		public Person(Name name, int age)
 			: this()
 		{
-			if(name == null)
-			{
-				throw new ArgumentNullException(nameof(name));
-			}
+			this.Name = name ?? throw new ArgumentNullException(nameof(name));
 
-			if(age < 0)
+			if (age < 0)
 			{
 				throw new ArgumentException(
 					"The age cannot be less than zero.", nameof(age));
 			}
 
-			this.Name = name;
 			this.Age = age;
 		}
 

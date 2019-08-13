@@ -6,7 +6,7 @@ namespace FindingExceptions.Client
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			AppDomain.CurrentDomain.FirstChanceException += (_, e) =>
 			{

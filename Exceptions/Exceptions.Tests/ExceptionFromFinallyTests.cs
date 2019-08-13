@@ -1,27 +1,22 @@
-﻿using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class ExceptionFromFinallyTests 
-		: CoreTests
+	public static class ExceptionFromFinallyTests 
 	{
-		[SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses")]
-		[TestMethod]
-		[ExpectedException(typeof(NotSupportedException))]
-		public void ThrowExceptionFromFinallyBlock()
-		{
-			try
+		[Test]
+		public static void ThrowExceptionFromFinallyBlock() => 
+			Assert.That(() =>
 			{
-				new Name(null, null);
-			}
-			finally
-			{
-				throw new NotSupportedException();
-			}
-		}
+				try
+				{
+					new Name(null, null);
+				}
+				finally
+				{
+					throw new NotSupportedException();
+				}
+			}, Throws.TypeOf<NotSupportedException>());
 	}
 }

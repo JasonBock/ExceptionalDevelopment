@@ -1,25 +1,16 @@
-﻿using Exceptions.Utilities;
-using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class CheckedAndUncheckedTests : CoreTests
+	public static class CheckedAndUncheckedTests
 	{
-		[TestMethod]
-		public void RunChecked()
-		{
-			ExceptionAssert.Throws<OverflowException>(
-				() => CheckedAndUnchecked.CheckedAdd(int.MaxValue, int.MaxValue));
-		}
+		[Test]
+		public static void RunChecked() => Assert.That(() => CheckedAndUnchecked.CheckedAdd(int.MaxValue, int.MaxValue), 
+			Throws.TypeOf<OverflowException>());
 
-		[TestMethod]
-		public void RunUnchecked()
-		{
-			this.TestContext.WriteLine(
-				CheckedAndUnchecked.UncheckedAdd(int.MaxValue, int.MaxValue).ToString());
-		}
+		[Test]
+		public static void RunUnchecked() => Assert.That(() => CheckedAndUnchecked.UncheckedAdd(int.MaxValue, int.MaxValue),
+			Throws.Nothing);
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using Exceptions;
-using System;
 using System.Collections.Generic;
 
 namespace FindingExceptions.Generator
@@ -9,8 +8,8 @@ namespace FindingExceptions.Generator
 		public static List<Person> GetPersons()
 		{
 			var persons = new List<Person>();
-			
-			for(int i = 0; i < 1000; i++)
+
+			for (var i = 0; i < 1000; i++)
 			{
 				if(i == 567)
 				{

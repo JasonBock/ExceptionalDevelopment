@@ -1,25 +1,16 @@
-﻿using Exceptions.Utilities;
-using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class FilterEmitterTests : CoreTests
+	public static class FilterEmitterTests
 	{
-		[TestMethod]
-		public void DivideWithNoException()
-		{
-			Assert.AreEqual(0,
-				new FilterEmitter().Divide(4, 0));
-		}
+		[Test]
+		public static void DivideWithNoException() => Assert.That(
+			new FilterEmitter().Divide(4, 0), Is.EqualTo(0));
 
-		[TestMethod]
-		public void DivideWithException()
-		{
-			ExceptionAssert.Throws<DivideByZeroException>(
-				() => new FilterEmitter().Divide(3, 0));
-		}
+		[Test]
+		public static void DivideWithException() => Assert.That(
+			() => new FilterEmitter().Divide(3, 0), Throws.TypeOf<DivideByZeroException>());
 	}
 }

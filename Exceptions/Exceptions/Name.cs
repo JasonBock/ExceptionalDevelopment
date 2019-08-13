@@ -5,8 +5,7 @@ namespace Exceptions
 	public sealed class Name
 	{
 		private Name()
-			: base()
-		{ }
+			: base() { }
 
 		public Name(string firstName, string lastName)
 			: base()

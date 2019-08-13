@@ -12,9 +12,9 @@ namespace Exceptions.Threading
 			AppDomain.CurrentDomain.UnhandledException += 
 				(_, e) => Console.Out.WriteLine(e.IsTerminating.ToString());
 
-			Program.UseThreadPool();
-			//AsyncContext.Run(
-			//	() => Program.UseTaskFactory());
+			//Program.UseThreadPool();
+			AsyncContext.Run(
+				() => Program.UseTaskFactory());
 		}
 
 		private static void UseThreadPool()

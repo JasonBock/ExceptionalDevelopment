@@ -2,16 +2,12 @@
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 
 namespace Exceptions.Utilities.Extensions
 {
 	public static class ExceptionExtensions
 	{
-		public static void Print(this Exception @this)
-		{
-			@this.Print(Console.Out);
-		}
+		public static void Print(this Exception @this) => @this.Print(Console.Out);
 
 		public static void Print(this Exception @this, TextWriter writer)
 		{

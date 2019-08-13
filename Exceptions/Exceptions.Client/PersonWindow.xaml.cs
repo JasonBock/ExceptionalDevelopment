@@ -32,16 +32,13 @@ namespace Exceptions.Client
 			return formattedPerson;
 		}
 
-		private void OnCreateClick(object sender, RoutedEventArgs e)
-		{
-			this.nameResults.Content = this.FormatPerson(
+		private void OnCreateClick(object sender, RoutedEventArgs e) => this.nameResults.Content = this.FormatPerson(
 				new UIInformation
 				{
 					Age = this.ageValue.Text,
 					FirstName = this.firstNameValue.Text,
 					LastName = this.lastNameValue.Text
 				});
-		}
 
 		private void OnCreateViaBackgroundWorkerClick(object sender, RoutedEventArgs e)
 		{

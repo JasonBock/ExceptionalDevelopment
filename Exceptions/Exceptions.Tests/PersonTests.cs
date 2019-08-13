@@ -1,16 +1,12 @@
-﻿using Exceptions.Utilities;
-using Exceptions.Utilities.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using System;
 
 namespace Exceptions.Tests
 {
-	[TestClass]
-	public sealed class PersonTests 
-		: CoreTests
+	public static class PersonTests 
 	{
-		[TestMethod]
-		public void Create()
+		[Test]
+		public static void Create()
 		{
 			var person = new Person(new Name("Joe", "Smith"), 44);
 			Assert.AreEqual(44, person.Age);
@@ -18,18 +14,12 @@ namespace Exceptions.Tests
 			Assert.AreEqual("Smith", person.Name.LastName);
 		}
 
-		[TestMethod]
-		public void CreateWithInvalidAge()
-		{
-			ExceptionAssert.Throws<ArgumentException>(
-				() => new Person(new Name("Joe", "Smith"), -44));
-		}
+		[Test]
+		public static void CreateWithInvalidAge() => 
+			Assert.That(() => new Person(new Name("Joe", "Smith"), -44), Throws.TypeOf<ArgumentException>());
 
-		[TestMethod]
-		public void CreateWithNullName()
-		{
-			ExceptionAssert.Throws<ArgumentNullException>(
-				() => new Person(null, 44));
-		}
+		[Test]
+		public static void CreateWithNullName() => 
+			Assert.That(() => new Person(null, -44), Throws.TypeOf<ArgumentNullException>());
 	}
 }
