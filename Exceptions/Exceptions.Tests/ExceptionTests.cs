@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Exceptions.Utilities.Extensions;
+using NUnit.Framework;
 using System;
 using System.Threading.Tasks;
 

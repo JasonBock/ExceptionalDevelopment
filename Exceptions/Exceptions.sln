@@ -3,29 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Utilities", "Exceptions.Utilities\Exceptions.Utilities.csproj", "{2ACFD5AA-330F-4446-A3B4-BD10ED6E8B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions.Utilities", "Exceptions.Utilities\Exceptions.Utilities.csproj", "{2ACFD5AA-330F-4446-A3B4-BD10ED6E8B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{2DBBA702-929E-4F29-BBA2-5BC10F357827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{2DBBA702-929E-4F29-BBA2-5BC10F357827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Tests", "Exceptions.Tests\Exceptions.Tests.csproj", "{C7247401-F554-4AE7-8D27-E963D9507429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions.Tests", "Exceptions.Tests\Exceptions.Tests.csproj", "{C7247401-F554-4AE7-8D27-E963D9507429}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Client", "Exceptions.Client\Exceptions.Client.csproj", "{4282F90B-54D0-4FED-9475-7D80E8348C3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOverflowShutdown", "StackOverflowShutdown\StackOverflowShutdown.csproj", "{53BDCD9C-3E85-4E25-A2F2-4624C5EDED43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackOverflowShutdown", "StackOverflowShutdown\StackOverflowShutdown.csproj", "{53BDCD9C-3E85-4E25-A2F2-4624C5EDED43}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ReallyBadCode", "ReallyBadCode\ReallyBadCode.vbproj", "{C7A5E404-1FAF-4880-B479-587462EB8FD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindingExceptions", "FindingExceptions\FindingExceptions.csproj", "{2AC49BD9-015B-4F1D-AAAC-9F87EEDEE793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Threading", "Exceptions.Threading\Exceptions.Threading.csproj", "{BA92B364-4271-40B9-9B98-9EA7B5957376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindingExceptions.Client", "FindingExceptions.Client\FindingExceptions.Client.csproj", "{C46EA176-A448-421E-90FB-27749CF17879}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingExceptions", "FindingExceptions\FindingExceptions.csproj", "{2AC49BD9-015B-4F1D-AAAC-9F87EEDEE793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InconsistentState", "InconsistentState\InconsistentState.csproj", "{8332DEB8-5598-4CB4-8EA2-C747D1F913B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingExceptions.Client", "FindingExceptions.Client\FindingExceptions.Client.csproj", "{C46EA176-A448-421E-90FB-27749CF17879}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindingExceptions.Generator", "FindingExceptions.Generator\FindingExceptions.Generator.csproj", "{7A821093-B806-4A38-97A7-DFF5A66BDC49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InconsistentState", "InconsistentState\InconsistentState.csproj", "{8332DEB8-5598-4CB4-8EA2-C747D1F913B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions.Performance", "Exceptions.Performance\Exceptions.Performance.csproj", "{41808A8A-986B-4679-9114-E0EE47E5F08B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingExceptions.Generator", "FindingExceptions.Generator\FindingExceptions.Generator.csproj", "{7A821093-B806-4A38-97A7-DFF5A66BDC49}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.Performance", "Exceptions.Performance\Exceptions.Performance.csproj", "{41808A8A-986B-4679-9114-E0EE47E5F08B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeToImprove", "CodeToImprove\CodeToImprove.csproj", "{64279232-8960-41EB-A840-CC7CA08E683F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +51,6 @@ Global
 		{53BDCD9C-3E85-4E25-A2F2-4624C5EDED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53BDCD9C-3E85-4E25-A2F2-4624C5EDED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53BDCD9C-3E85-4E25-A2F2-4624C5EDED43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7A5E404-1FAF-4880-B479-587462EB8FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7A5E404-1FAF-4880-B479-587462EB8FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7A5E404-1FAF-4880-B479-587462EB8FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7A5E404-1FAF-4880-B479-587462EB8FD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA92B364-4271-40B9-9B98-9EA7B5957376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA92B364-4271-40B9-9B98-9EA7B5957376}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA92B364-4271-40B9-9B98-9EA7B5957376}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA92B364-4271-40B9-9B98-9EA7B5957376}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2AC49BD9-015B-4F1D-AAAC-9F87EEDEE793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AC49BD9-015B-4F1D-AAAC-9F87EEDEE793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC49BD9-015B-4F1D-AAAC-9F87EEDEE793}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +71,10 @@ Global
 		{41808A8A-986B-4679-9114-E0EE47E5F08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41808A8A-986B-4679-9114-E0EE47E5F08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41808A8A-986B-4679-9114-E0EE47E5F08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64279232-8960-41EB-A840-CC7CA08E683F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64279232-8960-41EB-A840-CC7CA08E683F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64279232-8960-41EB-A840-CC7CA08E683F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64279232-8960-41EB-A840-CC7CA08E683F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

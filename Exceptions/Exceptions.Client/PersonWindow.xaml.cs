@@ -10,18 +10,13 @@ namespace Exceptions.Client
 	{
 		private const int WaitTime = 3000;
 
-		public PersonWindow()
-		{
-			InitializeComponent();
-		}
+		public PersonWindow() => this.InitializeComponent();
 
 		private string FormatPerson(UIInformation information)
 		{
-			string formattedPerson = string.Empty;
+			var formattedPerson = string.Empty;
 
-			int age = 0;
-
-			if (int.TryParse(information.Age, out age))
+			if (int.TryParse(information.Age, out var age))
 			{
 				var person = new Person(
 					new Name(information.FirstName, information.LastName),
@@ -84,7 +79,7 @@ namespace Exceptions.Client
 				Thread.Sleep(PersonWindow.WaitTime);
 				var information = state as UIInformation;
 				var result = this.FormatPerson(information);
-				Dispatcher.Invoke(new Action(() =>
+				this.Dispatcher.Invoke(new Action(() =>
 				{
 					this.nameResults.Content = result;
 					this.SetButtonEnabled(true);

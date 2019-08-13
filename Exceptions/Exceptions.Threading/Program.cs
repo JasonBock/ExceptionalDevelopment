@@ -1,5 +1,4 @@
-﻿using Nito.AsyncEx;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -7,14 +6,18 @@ namespace Exceptions.Threading
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
-			AppDomain.CurrentDomain.UnhandledException += 
-				(_, e) => Console.Out.WriteLine(e.IsTerminating.ToString());
+		//static void Main()
+		//{
+		//	AppDomain.CurrentDomain.UnhandledException += 
+		//		(_, e) => Console.Out.WriteLine(e.IsTerminating.ToString());
+		//	Program.UseThreadPool();
+		//}
 
-			//Program.UseThreadPool();
-			AsyncContext.Run(
-				() => Program.UseTaskFactory());
+		static async Task Main()
+		{
+			//AppDomain.CurrentDomain.UnhandledException +=
+			//	(_, e) => Console.Out.WriteLine(e.IsTerminating.ToString());
+			await Program.UseTaskFactory();
 		}
 
 		private static void UseThreadPool()
