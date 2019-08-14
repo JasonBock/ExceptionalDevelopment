@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeToImprove", "CodeToImpr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions.StackTraces", "Exceptions.StackTraces\Exceptions.StackTraces.csproj", "{FE24CDDF-C06F-49F0-BA8B-0D6DF5AF9D5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorsAndPatterns", "ErrorsAndPatterns\ErrorsAndPatterns.csproj", "{613278E6-B224-445F-98B3-A4021217CF44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{FE24CDDF-C06F-49F0-BA8B-0D6DF5AF9D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE24CDDF-C06F-49F0-BA8B-0D6DF5AF9D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE24CDDF-C06F-49F0-BA8B-0D6DF5AF9D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613278E6-B224-445F-98B3-A4021217CF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613278E6-B224-445F-98B3-A4021217CF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613278E6-B224-445F-98B3-A4021217CF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613278E6-B224-445F-98B3-A4021217CF44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

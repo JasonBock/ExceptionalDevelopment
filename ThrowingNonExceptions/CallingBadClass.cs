@@ -3,13 +3,19 @@ using System.Runtime.CompilerServices;
 
 [assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = true)]
 
-public class CallingBadClass
+public static class CallingBadClass
 {
     public static void Main()
     {
-        CatchWithNoException();
-        CatchExceptionAndWithNoException();
-        CatchException();
+        CallingBadClass.CatchWithNoException();
+		Console.Out.WriteLine();
+		Console.Out.WriteLine();
+
+        CallingBadClass.CatchExceptionAndWithNoException();
+		Console.Out.WriteLine();
+		Console.Out.WriteLine();
+
+        CallingBadClass.CatchException();
     }
 
     private static void CatchExceptionAndWithNoException()
@@ -19,18 +25,13 @@ public class CallingBadClass
         try
         {
             Console.Out.WriteLine("In try block...");
-            BadClass badClass = new BadClass();
+            var badClass = new BadClass();
             badClass.BadMethod();
             Console.Out.WriteLine("BadMethod called.");        
         }
         catch(Exception exception)
         {
-            Console.Out.WriteLine("Catch entered - exception type is " +
-                exception.GetType().FullName);                        
-        }
-        catch
-        {
-            Console.Out.WriteLine("Catch entered.");                        
+            Console.Out.WriteLine($"Catch entered - exception type is {exception.GetType().FullName}");
         }
         finally
         {
@@ -45,14 +46,13 @@ public class CallingBadClass
         try
         {
             Console.Out.WriteLine("In try block...");
-            BadClass badClass = new BadClass();
+            var badClass = new BadClass();
             badClass.BadMethod();
             Console.Out.WriteLine("BadMethod called.");        
         }
         catch(Exception exception)
         {
-            Console.Out.WriteLine("Catch entered - exception type is " +
-                exception.GetType().FullName);                        
+            Console.Out.WriteLine($"Catch entered - exception type is {exception.GetType().FullName}");
         }
         finally
         {
@@ -67,7 +67,7 @@ public class CallingBadClass
         try
         {
             Console.Out.WriteLine("In try block...");
-            BadClass badClass = new BadClass();
+            var badClass = new BadClass();
             badClass.BadMethod();
             Console.Out.WriteLine("BadMethod called.");        
         }
