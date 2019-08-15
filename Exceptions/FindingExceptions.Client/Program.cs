@@ -10,7 +10,14 @@ namespace FindingExceptions.Client
 		{
 			AppDomain.CurrentDomain.FirstChanceException += (_, e) =>
 			{
+				Console.Out.WriteLine($"{nameof(AppDomain.FirstChanceException)}");
 				e.Exception.Print(Console.Out);
+			};
+
+			AppDomain.CurrentDomain.UnhandledException += (_, e) =>
+			{
+				Console.Out.WriteLine($"{nameof(AppDomain.UnhandledException)}");
+				((Exception)e.ExceptionObject).Print(Console.Out);
 			};
 
 			try

@@ -4,6 +4,6 @@ namespace Exceptions.Performance
 {
 	class Program
 	{
-		static void Main() => BenchmarkRunner.Run<CheckedVsUnchecked>();
+		static void Main() => BenchmarkRunner.Run<ParseVsTryParse>();
 	}
 }
