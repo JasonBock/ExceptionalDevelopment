@@ -15,7 +15,7 @@ namespace Exceptions.Tests
 
 		[Test]
 		public static void CreateWithEmptyFirstName() => 
-			Assert.That(() => new Name(string.Empty, "Smith"), Throws.TypeOf< ArgumentException>());
+			Assert.That(() => new Name(string.Empty, "Smith"), Throws.TypeOf<ArgumentException>());
 
 		[Test]
 		public static void CreateWithEmptyLastName() => 

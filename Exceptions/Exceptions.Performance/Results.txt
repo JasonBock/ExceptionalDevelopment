@@ -1,9 +1,9 @@
 ﻿Parse Vs. TryParse
 
-|   Method |         Mean |      Error |     StdDev |
-|--------- |-------------:|-----------:|-----------:|
-|    Parse | 30,837.80 ns | 468.648 ns | 438.374 ns |
-| TryParse |     78.11 ns |   1.353 ns |   1.199 ns |
+|   Method |         Mean |       Error |      StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |-------------:|------------:|------------:|-------:|------:|------:|----------:|
+|    Parse | 21,741.09 ns | 164.0692 ns | 145.4431 ns | 0.1221 |     - |     - |     536 B |
+| TryParse |     14.17 ns |   0.1919 ns |   0.1701 ns |      - |     - |     - |         - |
 
 
 Checked Vs. Unchecked

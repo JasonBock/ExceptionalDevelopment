@@ -3,6 +3,7 @@ using System;
 
 namespace Exceptions.Performance
 {
+	[MemoryDiagnoser]
 	public class ParseVsTryParse
 	{
 		private const string BadValue = "7r83o4uf8ael";

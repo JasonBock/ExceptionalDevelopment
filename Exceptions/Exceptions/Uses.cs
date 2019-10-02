@@ -4,10 +4,8 @@
 	{
 		public static void CreateAndUse()
 		{
-			using (var resource = new DisposableResource())
-			{
-				resource.Use();
-			}
+			using var resource = new DisposableResource();
+			resource.Use();
 		}
 	}
 }

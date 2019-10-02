@@ -20,6 +20,9 @@ namespace FindingExceptions.Client
 				((Exception)e.ExceptionObject).Print(Console.Out);
 			};
 
+			new BadCode().Execute(
+				PersonListGenerator.GetPersons());
+
 			try
 			{
 				new BadCode().Execute(
